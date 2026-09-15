@@ -1,0 +1,22 @@
+Numerical experiments E1-E3
+
+Run commands from this experiments/ directory. See numerics/README.md for
+commands, parameters, diagnostics, seeds, and descriptions of all three studies.
+
+README.md                        Overview and quick-start commands.
+.gitignore                       Excludes caches and separate rerun outputs.
+requirements.txt                 Package versions recorded for the canonical run.
+numerics/README.md                Reproduction instructions and experiment notes.
+numerics/e1_scalar.py             E1: exact scalar-carrier Binomial-Beta risks.
+numerics/e2_cellwise.py           E2: atomwise risks, beta moments and Monte Carlo.
+numerics/e3_cqr_pipeline.py       E3: learned CQR under exponential covariate shift.
+numerics/e3_cqr_results.npz       E3: 14 arrays of 200 Monte Carlo replications.
+numerics/e3_cqr_run.json          Canonical E3 configuration, diagnostics and hashes.
+figure/e1_scalar.pdf             Reference E1 figure included in the supplement.
+figure/e2_cellwise.pdf           Reference E2 figure included in the supplement.
+figure/e3_cqr.pdf                Reference E3 figure included in the main article.
+
+All experiments use synthetic distributions and require no external datasets.
+The E3 result archive supports figure reproduction without retraining.
+The Python scripts and reference figures are the versions used for the article.
+E3 metadata uses portable relative paths; all numerical arrays are unchanged.

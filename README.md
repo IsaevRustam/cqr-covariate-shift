@@ -43,6 +43,10 @@ calibration sizes 128, 192, 256, 384, 512; training sizes 128, 256, 512, 1024,
 Detailed commands, panel-specific sample sizes, numerical checks, statistical
 summaries, and measured runtimes are in [numerics/README.md](numerics/README.md).
 
+The reference E1 and E2 PDFs record Matplotlib 3.11.1; the E3 PDF records
+Matplotlib 3.8.0. Font and math-text layout can differ across Matplotlib
+versions. The checked-in PDFs preserve the figures used in the article.
+
 ## Checks
 
 ```sh

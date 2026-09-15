@@ -1,0 +1,4 @@
+# Environment recorded for the canonical E3 run: Python 3.11.7
+numpy==1.26.4
+scipy==1.11.4
+matplotlib==3.8.0
