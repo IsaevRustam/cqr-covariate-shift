@@ -11,7 +11,7 @@ numerics/e1_scalar.py             E1: exact scalar-carrier Binomial-Beta risks.
 numerics/e2_cellwise.py           E2: atomwise risks, beta moments and Monte Carlo.
 numerics/e3_cqr_pipeline.py       E3: learned CQR under exponential covariate shift.
 numerics/e3_cqr_results.npz       E3: 14 arrays of 200 Monte Carlo replications.
-numerics/e3_cqr_run.json          Canonical E3 configuration, diagnostics and hashes.
+numerics/e3_cqr_run.json          Original E3 run and updated rendering hashes.
 figure/e1_scalar.pdf             Reference E1 figure included in the supplement.
 figure/e2_cellwise.pdf           Reference E2 figure included in the supplement.
 figure/e3_cqr.pdf                Reference E3 figure included in the main article.

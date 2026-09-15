@@ -82,9 +82,10 @@ one row per replication. Embedded metadata records the resolved configuration,
 RNG streams, software versions, Git HEAD, script hash, runtime, and diagnostics.
 `--load-results` reads these matrices and only renders the PDF.
 
-`numerics/e3_cqr_run.json` records the command and SHA256 hashes of the script,
-PDF, and results archive. Use separate output, results, and manifest paths for
-quick or exploratory runs so they do not replace the canonical artifacts.
+`numerics/e3_cqr_run.json` records the original simulation command and artifact
+hashes. Its `rendering` entry records the updated plotting script and current
+figure. Use separate output, results, and manifest paths for quick or exploratory
+runs so they do not replace the canonical artifacts.
 
 ## Computation and checks
 
@@ -201,4 +202,12 @@ additional computational details.
 Local absolute paths in the E3 JSON manifest and embedded NPZ metadata were
 replaced by relative paths. Numerical array payloads are unchanged. The manifest
 retains the original results-archive hash and records the distributed archive hash.
-The three Python scripts and three reference figure PDFs are unchanged.
+The scripts and reference figures include the updated stroke widths. The E3
+manifest retains the original simulation provenance and records the current
+script and figure hashes in `rendering`.
+
+## Figure rendering
+
+All three reference PDFs were regenerated with Matplotlib 3.8.0. Nonzero strokes
+are at least 1.01 pt after scaling to the manuscript width of 6.151 inches.
+E1 and E2 use the full default settings; E3 was redrawn from the saved results.

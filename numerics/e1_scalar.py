@@ -438,6 +438,28 @@ def make_figure(
     ax_alpha.text(-0.08, 1.04, "(c)", transform=ax_alpha.transAxes, fontsize=9.5)
     ax_alpha.legend(frameon=False, loc="lower right", handlelength=1.5)
 
+    # Keep nonzero strokes at least 1 pt after scaling to the SIAM text width.
+    from matplotlib.collections import Collection
+    from matplotlib.spines import Spine
+
+    fig.canvas.draw()
+    minimum_linewidth = 1.01 * fig.get_figwidth() / 6.151
+    for artist in fig.findobj():
+        if isinstance(artist, Line2D):
+            if artist.get_linewidth() > 0:
+                artist.set_linewidth(max(artist.get_linewidth(), minimum_linewidth))
+            if artist.get_markeredgewidth() > 0:
+                artist.set_markeredgewidth(
+                    max(artist.get_markeredgewidth(), minimum_linewidth)
+                )
+        elif isinstance(artist, Collection):
+            widths = np.asarray(artist.get_linewidths(), dtype=float)
+            artist.set_linewidths(np.where(
+                widths > 0, np.maximum(widths, minimum_linewidth), 0.0
+            ))
+        elif isinstance(artist, Spine):
+            artist.set_linewidth(max(artist.get_linewidth(), minimum_linewidth))
+
     output.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(
         output,

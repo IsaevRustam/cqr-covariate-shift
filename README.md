@@ -43,9 +43,10 @@ calibration sizes 128, 192, 256, 384, 512; training sizes 128, 256, 512, 1024,
 Detailed commands, panel-specific sample sizes, numerical checks, statistical
 summaries, and measured runtimes are in [numerics/README.md](numerics/README.md).
 
-The reference E1 and E2 PDFs record Matplotlib 3.11.1; the E3 PDF records
-Matplotlib 3.8.0. Font and math-text layout can differ across Matplotlib
-versions. The checked-in PDFs preserve the figures used in the article.
+All three reference PDFs were regenerated with Matplotlib 3.8.0, with nonzero
+strokes at least 1.01 pt at the manuscript width of 6.151 inches. The checked-in
+PDFs are the figures used in the article. Font and math-text layout can differ
+across Matplotlib versions.
 
 ## Checks
 
@@ -64,11 +65,14 @@ and calibration diagnostics. They do not replace the complete experiments.
 Monte Carlo result matrices, each with 200 replications. Embedded JSON metadata
 records the simulation configuration, random-number streams, software versions,
 and diagnostics. [numerics/e3_cqr_run.json](numerics/e3_cqr_run.json) records the
-canonical run and hashes of its script, figure, and result archive.
+canonical run and its original artifact hashes. The `rendering` entry records
+the updated plotting script and current figure hashes. The original script and
+figure remain available in GitHub commit `92750c1`.
 
 Absolute machine-local paths in the distributed metadata have been replaced by
-relative paths. All 14 numerical array payloads, Python scripts, and reference
-figures are unchanged. The manifest records both the original result-archive
-hash and the hash of the distributed archive.
+relative paths. All 14 numerical array payloads are unchanged. The rendering
+code and reference figures were updated to meet the SIAM line-width requirement.
+The manifest records both the original result-archive hash and the hash of the
+distributed archive.
 
 [INDEX.txt](INDEX.txt) lists the experiment files and their roles.

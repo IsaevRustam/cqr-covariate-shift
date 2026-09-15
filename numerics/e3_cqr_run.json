@@ -118,5 +118,34 @@
     "python": "3.11.7",
     "scipy": "1.11.4"
   },
-  "distribution_note": "Absolute local paths were replaced by relative paths. All 14 numerical array payloads are unchanged. results_sha256 identifies the distributed archive; original_results_sha256 identifies the original run archive."
+  "distribution_note": "Absolute local paths were replaced by relative paths. All 14 numerical array payloads are unchanged. Top-level provenance records the original simulation artifacts; rendering records the updated plotting script and figure. results_sha256 in the original provenance identifies the distributed archive, and original_results_sha256 identifies the original run archive.",
+  "rendering": {
+    "created_utc": "2026-09-15T22:36:41.652300+00:00",
+    "execution_mode": "plot_only",
+    "command": [
+      "python",
+      "numerics/e3_cqr_pipeline.py",
+      "--load-results",
+      "numerics/e3_cqr_results.npz",
+      "--output",
+      "figure/e3_cqr.pdf"
+    ],
+    "software": {
+      "matplotlib": "3.8.0",
+      "numpy": "1.26.4",
+      "python": "3.11.7",
+      "scipy": "1.11.4"
+    },
+    "provenance": {
+      "git_head": "97074e77e975baba2c5754a6bc756791ec714cfe",
+      "pdf": "figure/e3_cqr.pdf",
+      "pdf_sha256": "655345dcdbe59b502abd92c8759485ba3f78112bbff8447feb0701528cac1407",
+      "results": "numerics/e3_cqr_results.npz",
+      "results_sha256": "2465239f3d1e57a28c45a9985935cc7d661e8e31ace0343941bef25bf1007778",
+      "script": "numerics/e3_cqr_pipeline.py",
+      "script_sha256": "8d162d153e7ff347f62cc6abc55eff8b0fe061272c6aa03789e302ddb2303805"
+    },
+    "runtime_seconds": 0.4273489579791203,
+    "note": "The figure was redrawn from the saved canonical results with thicker strokes for the SIAM manuscript. The numerical results were not recomputed."
+  }
 }
