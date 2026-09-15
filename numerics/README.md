@@ -193,7 +193,7 @@ and affine endpoint regimes at fixed large calibration size. Color, line
 style, and marker meanings are listed below each panel.
 
 Section 6 of the main article contains the experiment descriptions and the E3
-figure. Section SM4 of the supplement contains the E1 and E2 figures and
+figure. Section SM5 of the supplement contains the E1 and E2 figures and
 additional computational details.
 
 ## Distributed artifact metadata
